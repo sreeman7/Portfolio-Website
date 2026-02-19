@@ -1,7 +1,7 @@
 const portfolioData = {
   name: "Sreeman Reddy Gokula",
   heroTitle: "Hello, I am Sreeman!",
-  role: "Student, Developer, and Friendly Person",
+  role: "Student | Data Scienctist | Machine Learning/AI | SWE",
   initials: "SR",
   githubUsername: "sreeman7",
   profileImage: "assets/profile.JPG",
@@ -17,7 +17,7 @@ const portfolioData = {
   education: [
     {
       school: "University of Alberta",
-      meta: "BSc in Computing Science | 2023 - 2027",
+      meta: "BSc in Computing Science | 2024 - 2028",
       points: [
         "Relevant focus on software engineering, algorithms, and systems.",
         "Built academic and personal projects in full-stack development."

@@ -1,5 +1,5 @@
 const portfolioData = {
-  name: "Your Name",
+  name: "Sreeman Reddy Gokula",
   role: "Software Developer",
   headline: "I build useful products that solve real problems.",
   summary:
@@ -62,9 +62,9 @@ const portfolioData = {
   contactCopy: "Open to software engineering roles and impactful product opportunities.",
   contactCta: "Contact Me",
   contacts: {
-    email: "youremail@example.com",
-    github: "https://github.com/your-username",
-    linkedin: "https://www.linkedin.com/in/your-handle/",
+    email: "gokula@ualberta.ca",
+    github: "https://github.com/sreeman7",
+    linkedin: "https://www.linkedin.com/in/sreeman-reddy-gokula-3674b02b5/",
     resume: "https://example.com/your-resume.pdf"
   }
 };

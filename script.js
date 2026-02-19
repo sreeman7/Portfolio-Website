@@ -11,8 +11,8 @@ const portfolioData = {
   ],
   facts: [
     "Based in Edmonton, AB",
-    "Open to Software Engineer and GenAI opportunities",
-    "Interests: Generative AI, full-stack apps, APIs, marathon running, travel, and hiking"
+    "Open to Software Engineer opportunities",
+    "Interests: web apps, APIs, and product engineering"
   ],
   education: [
     {

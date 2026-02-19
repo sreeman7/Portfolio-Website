@@ -1,9 +1,9 @@
 const portfolioData = {
   name: "Sreeman Reddy Gokula",
   role: "Software Developer",
-  headline: "I build useful products that solve real problems.",
   summary:
     "I design and ship web experiences with clean engineering, strong UX, and measurable results.",
+  profileLabel: "Profile",
   aboutTitle: "Builder mindset, product focus",
   about:
     "I enjoy shipping products that are technically strong and easy for people to use. I care about ownership, clear communication, and writing code that teams can maintain and scale.",
@@ -134,10 +134,10 @@ function renderSkills(skills) {
 
 function initializePage(data) {
   document.title = `${data.name} | Portfolio`;
-  setText("brand-name", data.name);
   setText("hero-role", data.role);
+  setText("hero-name", data.name);
+  setText("profile-badge", data.profileLabel);
   setText("footer-name", data.name);
-  setText("hero-headline", data.headline);
   setText("hero-summary", data.summary);
   setText("hero-contact-label", data.contactCta);
   setText("about-title", data.aboutTitle);

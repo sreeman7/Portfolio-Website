@@ -7,90 +7,72 @@
   <meta name="description" content="Personal portfolio website showcasing projects, skills, and contact information.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="bg-shape bg-shape-one"></div>
-  <div class="bg-shape bg-shape-two"></div>
+  <main id="top" class="page-main">
+    <section class="portfolio-shell container">
+      <header class="shell-header reveal">
+        <a class="brand" href="#top" id="hero-role">Software Developer</a>
+        <nav class="main-nav">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" id="brand-name">Your Name</a>
-      <nav class="main-nav">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+      <div class="shell-content">
+        <section class="intro-column reveal">
+          <div class="profile-badge" id="profile-badge">Profile</div>
+          <h1 id="hero-name">Your Name</h1>
+          <p id="hero-summary">I design and ship web experiences with clean engineering, strong UX, and measurable results.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Projects</a>
+            <a class="btn btn-secondary" href="#contact" id="hero-contact-label">Contact</a>
+          </div>
+          <ul class="metrics" id="metrics-list">
+            <li><span>12+</span>projects completed</li>
+            <li><span>3</span>projects ongoing</li>
+          </ul>
+        </section>
 
-  <main id="top">
-    <section class="hero container">
-      <p class="eyebrow reveal" id="hero-role">Software Developer</p>
-      <h1 class="reveal" id="hero-headline">I build useful products that solve real problems.</h1>
-      <p class="hero-copy reveal" id="hero-summary">
-        I design and ship web experiences with clean engineering, strong UX, and measurable results.
-      </p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="#projects">View Projects</a>
-        <a class="btn btn-secondary" href="#contact" id="hero-contact-label">Contact Me</a>
+        <section id="about" class="about-card reveal">
+          <h2 id="about-title">About Me</h2>
+          <p id="about-copy">
+            I enjoy shipping products that are technically strong and easy for people to use. I care about ownership,
+            clear communication, and writing code that teams can maintain and scale.
+          </p>
+        </section>
       </div>
-      <ul class="metrics reveal" id="metrics-list">
-        <li><span>12+</span> projects completed</li>
-        <li><span>3</span> production launches</li>
-        <li><span>99%</span> focus on quality</li>
-      </ul>
-    </section>
 
-    <section id="projects" class="section container">
-      <div class="section-title reveal">
-        <p class="eyebrow">Featured Work</p>
-        <h2>Projects that show execution</h2>
-      </div>
-      <div class="project-grid" id="project-grid">
-      </div>
-    </section>
+      <section id="projects" class="projects-section reveal">
+        <h2>Projects Field</h2>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
 
-    <section id="skills" class="section container">
-      <div class="section-title reveal">
-        <p class="eyebrow">Capabilities</p>
-        <h2>What I bring to a team</h2>
-      </div>
-      <div class="skills-grid" id="skills-grid">
-      </div>
-    </section>
+      <section id="skills" class="skills-section reveal">
+        <h2>Skills</h2>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
 
-    <section id="about" class="section container about">
-      <div class="section-title reveal">
-        <p class="eyebrow">About Me</p>
-        <h2 id="about-title">Builder mindset, product focus</h2>
-      </div>
-      <p class="reveal" id="about-copy">
-        I enjoy shipping products that are technically strong and easy for people to use. I care about ownership,
-        clear communication, and writing code that teams can maintain and scale.
-      </p>
-    </section>
-
-    <section id="contact" class="section container contact">
-      <div class="section-title reveal">
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">Let’s talk about your team’s goals</h2>
-      </div>
-      <p class="reveal" id="contact-copy">Open to software engineering roles and impactful product opportunities.</p>
-      <div class="contact-links reveal">
-        <a class="btn btn-primary" href="mailto:youremail@example.com" id="email-link">Email Me</a>
-        <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noreferrer" id="github-link">GitHub</a>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" id="linkedin-link">LinkedIn</a>
-        <a class="btn btn-secondary" href="#" target="_blank" rel="noreferrer" id="resume-link">Resume</a>
-      </div>
+      <section id="contact" class="contact-section reveal">
+        <h2 id="contact-title">Contact</h2>
+        <p id="contact-copy">Open to software engineering roles and impactful product opportunities.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:youremail@example.com" id="email-link">Email</a>
+          <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noreferrer" id="github-link">GitHub</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" id="linkedin-link">LinkedIn</a>
+          <a class="btn btn-secondary" href="#" target="_blank" rel="noreferrer" id="resume-link">Resume</a>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> <span id="footer-name">Your Name</span>. Built with intent.</p>
+      <p>© <span id="year"></span> <span id="footer-name">Your Name</span>.</p>
     </div>
   </footer>
 

@@ -1,7 +1,9 @@
 const portfolioData = {
   name: "Sreeman Reddy Gokula",
-  role: "Software Developer",
+  heroTitle: "Hello, I am Sreeman!",
+  role: "Student, Developer, and Friendly Person",
   initials: "SR",
+  githubUsername: "sreeman7",
   profileImage: "assets/profile.JPG",
   about: [
     "I am a software developer focused on building reliable products with clean architecture and thoughtful UX.",
@@ -32,7 +34,7 @@ const portfolioData = {
       ]
     }
   ],
-  projects: [
+  fallbackProjects: [
     {
       title: "TaskFlow Platform",
       description: "Task automation dashboard with auth, analytics, and workflow templates.",
@@ -138,7 +140,7 @@ function renderProjects(projects) {
     .map(
       (project) => `
         <article class="project-card">
-          <h3>${project.title}</h3>
+          <h3><a class="project-title-link" href="${project.link}" target="_blank" rel="noreferrer">${project.title}</a></h3>
           <p>${project.description}</p>
           <div class="project-tags">
             ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
@@ -148,6 +150,70 @@ function renderProjects(projects) {
       `
     )
     .join("");
+}
+
+function renderProjectStatus(message) {
+  const grid = document.getElementById("project-grid");
+  if (!grid) return;
+  grid.innerHTML = `<p class="project-status">${message}</p>`;
+}
+
+async function fetchAllGitHubRepos(username) {
+  const repos = [];
+  let page = 1;
+  const perPage = 100;
+
+  while (true) {
+    const response = await fetch(
+      `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}&sort=updated`
+    );
+
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+
+    const pageItems = await response.json();
+    repos.push(...pageItems);
+
+    if (pageItems.length < perPage) break;
+    page += 1;
+  }
+
+  return repos;
+}
+
+function mapGitHubReposToProjects(repos) {
+  return repos
+    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+    .map((repo) => {
+      const tags = [];
+      if (repo.language) tags.push(repo.language);
+      tags.push(`★ ${repo.stargazers_count}`);
+      tags.push(`Forks ${repo.forks_count}`);
+
+      return {
+        title: repo.name,
+        description: repo.description || "No description provided for this repository yet.",
+        tags,
+        link: repo.html_url,
+        linkLabel: "Open Repo"
+      };
+    });
+}
+
+async function loadGitHubProjects(username, fallbackProjects) {
+  renderProjectStatus("Loading projects from GitHub...");
+
+  try {
+    const repos = await fetchAllGitHubRepos(username);
+    if (!repos.length) {
+      renderProjectStatus("No public repositories found yet.");
+      return;
+    }
+    renderProjects(mapGitHubReposToProjects(repos));
+  } catch (error) {
+    renderProjects(fallbackProjects);
+  }
 }
 
 function renderSkills(skills) {
@@ -192,7 +258,7 @@ function setupProfileImage(imagePath) {
 function initializePage(data) {
   document.title = `${data.name} | Portfolio`;
   setText("brand-name", data.name);
-  setText("hero-name", data.name);
+  setText("hero-name", data.heroTitle);
   setText("hero-role", data.role);
   setText("profile-avatar", data.initials);
   setText("contact-copy", data.contactCopy);
@@ -203,7 +269,7 @@ function initializePage(data) {
   renderFacts(data.facts);
   renderTimeline(data.education, "education-list", "school");
   renderTimeline(data.experience, "experience-list", "role");
-  renderProjects(data.projects);
+  loadGitHubProjects(data.githubUsername, data.fallbackProjects);
   renderActivities(data.activities);
   renderSkills(data.skills);
 

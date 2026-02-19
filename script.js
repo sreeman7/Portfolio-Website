@@ -1,66 +1,94 @@
 const portfolioData = {
   name: "Sreeman Reddy Gokula",
   role: "Software Developer",
-  summary:
-    "I design and ship web experiences with clean engineering, strong UX, and measurable results.",
-  profileLabel: "Profile",
-  aboutTitle: "Builder mindset, product focus",
-  about:
-    "I enjoy shipping products that are technically strong and easy for people to use. I care about ownership, clear communication, and writing code that teams can maintain and scale.",
-  metrics: [
-    { value: "12+", label: "projects completed" },
-    { value: "3", label: "production launches" },
-    { value: "99%", label: "focus on quality" }
+  initials: "SR",
+  profileImage: "assets/profile.JPG",
+  about: [
+    "I am a software developer focused on building reliable products with clean architecture and thoughtful UX.",
+    "I enjoy shipping practical features, collaborating with teams, and improving systems through measurable results."
+  ],
+  facts: [
+    "Based in Edmonton, AB",
+    "Open to Software Engineer opportunities",
+    "Interests: web apps, APIs, and product engineering"
+  ],
+  education: [
+    {
+      school: "University of Alberta",
+      meta: "BSc in Computing Science | 2023 - 2027",
+      points: [
+        "Relevant focus on software engineering, algorithms, and systems.",
+        "Built academic and personal projects in full-stack development."
+      ]
+    }
+  ],
+  experience: [
+    {
+      role: "Software Developer Projects",
+      meta: "Portfolio Work | 2024 - Present",
+      points: [
+        "Developed web applications with responsive UI and accessible interactions.",
+        "Implemented API integrations and improved performance across pages."
+      ]
+    }
   ],
   projects: [
     {
-      type: "Full Stack",
       title: "TaskFlow Platform",
-      description:
-        "Built a task automation dashboard with role-based auth, analytics, and workflow templates.",
-      stack: ["React + Node.js", "PostgreSQL", "JWT Authentication"],
-      linkLabel: "Case Study",
-      link: "#"
+      description: "Task automation dashboard with auth, analytics, and workflow templates.",
+      tags: ["React", "Node.js", "PostgreSQL"],
+      link: "#",
+      linkLabel: "View Project"
     },
     {
-      type: "Frontend",
       title: "Commerce UI Revamp",
-      description:
-        "Redesigned a product listing experience to improve conversion and reduce layout shift.",
-      stack: ["Next.js", "Performance Optimization", "Accessibility"],
-      linkLabel: "Case Study",
-      link: "#"
+      description: "Redesigned product browsing experience to improve clarity and conversion.",
+      tags: ["Next.js", "UX", "Accessibility"],
+      link: "#",
+      linkLabel: "View Project"
     },
     {
-      type: "Data + API",
       title: "Insights Engine",
+      description: "Reporting app that converts product events into decision-ready summaries.",
+      tags: ["Python", "REST APIs", "Dashboard"],
+      link: "#",
+      linkLabel: "View Project"
+    },
+    {
+      title: "Portfolio Website",
+      description: "Personal website with structured sections, animations, and contact flow.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      link: "#",
+      linkLabel: "View Project"
+    }
+  ],
+  activities: [
+    {
+      title: "Hackathon Participant",
+      meta: "University and Community Events",
       description:
-        "Created a reporting tool that turns event data into action-ready business summaries.",
-      stack: ["Python", "REST APIs", "Dashboarding"],
-      linkLabel: "Case Study",
-      link: "#"
+        "Worked in fast-paced teams to design and build prototypes within 24-48 hours."
+    },
+    {
+      title: "Technical Club Member",
+      meta: "Campus Developer Community",
+      description:
+        "Contributed to peer coding sessions, project demos, and technical knowledge sharing."
     }
   ],
   skills: [
-    {
-      title: "Frontend",
-      description:
-        "HTML, CSS, JavaScript, React, Next.js, Tailwind, responsive design, accessibility."
-    },
-    {
-      title: "Backend",
-      description:
-        "Node.js, Express, APIs, authentication, database modeling, integration workflows."
-    },
-    {
-      title: "Engineering",
-      description:
-        "Testing, clean architecture, performance tuning, observability, and collaboration."
-    }
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Express",
+    "Python",
+    "PostgreSQL",
+    "Git",
+    "Responsive Design",
+    "Testing"
   ],
-  contactTitle: "Let's talk about your team's goals",
-  contactCopy: "Open to software engineering roles and impactful product opportunities.",
-  contactCta: "Contact Me",
+  contactCopy: "If you want to contact me, use the form or one of these links.",
   contacts: {
     email: "gokula@ualberta.ca",
     github: "https://github.com/sreeman7",
@@ -71,47 +99,53 @@ const portfolioData = {
 
 function setText(id, value) {
   const element = document.getElementById(id);
-  if (element) {
-    element.textContent = value;
-  }
+  if (element) element.textContent = value;
 }
 
 function setLink(id, href, label) {
   const element = document.getElementById(id);
-  if (element) {
-    element.href = href;
-    if (label) {
-      element.textContent = label;
-    }
-  }
+  if (!element) return;
+  element.href = href;
+  if (label) element.textContent = label;
 }
 
-function renderMetrics(metrics) {
-  const list = document.getElementById("metrics-list");
+function renderFacts(facts) {
+  const list = document.getElementById("profile-facts");
   if (!list) return;
+  list.innerHTML = facts.map((fact) => `<li>${fact}</li>`).join("");
+}
 
-  list.innerHTML = metrics
-    .map((metric) => `<li><span>${metric.value}</span>${metric.label}</li>`)
+function renderTimeline(items, id, headingKey) {
+  const container = document.getElementById(id);
+  if (!container) return;
+  container.innerHTML = items
+    .map(
+      (item) => `
+        <article class="timeline-item">
+          <h3>${item[headingKey]}</h3>
+          <p class="timeline-meta">${item.meta}</p>
+          <ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>
+        </article>
+      `
+    )
     .join("");
 }
 
 function renderProjects(projects) {
   const grid = document.getElementById("project-grid");
   if (!grid) return;
-
   grid.innerHTML = projects
     .map(
       (project) => `
-      <article class="project-card reveal">
-        <p class="project-tag">${project.type}</p>
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <ul>
-          ${project.stack.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
-        <a href="${project.link}" target="_blank" rel="noreferrer">${project.linkLabel}</a>
-      </article>
-    `
+        <article class="project-card">
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <div class="project-tags">
+            ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <a class="project-link" href="${project.link}" target="_blank" rel="noreferrer">${project.linkLabel}</a>
+        </article>
+      `
     )
     .join("");
 }
@@ -119,64 +153,67 @@ function renderProjects(projects) {
 function renderSkills(skills) {
   const grid = document.getElementById("skills-grid");
   if (!grid) return;
+  grid.className = "chip-list";
+  grid.innerHTML = skills.map((skill) => `<span>${skill}</span>`).join("");
+}
 
-  grid.innerHTML = skills
+function renderActivities(activities) {
+  const grid = document.getElementById("activity-grid");
+  if (!grid) return;
+  grid.innerHTML = activities
     .map(
-      (skill) => `
-      <article class="skill-block reveal">
-        <h3>${skill.title}</h3>
-        <p>${skill.description}</p>
-      </article>
-    `
+      (activity) => `
+        <article class="activity-card">
+          <h3>${activity.title}</h3>
+          <p class="activity-meta">${activity.meta}</p>
+          <p>${activity.description}</p>
+        </article>
+      `
     )
     .join("");
 }
 
+function renderAboutParagraphs(paragraphs) {
+  const container = document.getElementById("about-copy");
+  if (!container) return;
+  container.innerHTML = paragraphs.map((text) => `<p>${text}</p>`).join("");
+}
+
+function setupProfileImage(imagePath) {
+  const image = document.getElementById("profile-image");
+  const wrap = document.getElementById("profile-avatar-wrap");
+  if (!image || !wrap) return;
+
+  image.src = imagePath;
+  image.onload = () => wrap.classList.add("has-image");
+  image.onerror = () => wrap.classList.remove("has-image");
+}
+
 function initializePage(data) {
   document.title = `${data.name} | Portfolio`;
-  setText("hero-role", data.role);
+  setText("brand-name", data.name);
   setText("hero-name", data.name);
-  setText("profile-badge", data.profileLabel);
-  setText("footer-name", data.name);
-  setText("hero-summary", data.summary);
-  setText("hero-contact-label", data.contactCta);
-  setText("about-title", data.aboutTitle);
-  setText("about-copy", data.about);
-  setText("contact-title", data.contactTitle);
+  setText("hero-role", data.role);
+  setText("profile-avatar", data.initials);
   setText("contact-copy", data.contactCopy);
-  renderMetrics(data.metrics);
+  setText("footer-name", data.name);
+  setupProfileImage(data.profileImage);
+
+  renderAboutParagraphs(data.about);
+  renderFacts(data.facts);
+  renderTimeline(data.education, "education-list", "school");
+  renderTimeline(data.experience, "experience-list", "role");
   renderProjects(data.projects);
+  renderActivities(data.activities);
   renderSkills(data.skills);
+
   setLink("email-link", `mailto:${data.contacts.email}`);
   setLink("github-link", data.contacts.github);
   setLink("linkedin-link", data.contacts.linkedin);
   setLink("resume-link", data.contacts.resume);
 }
 
-function setupRevealAnimation() {
-  const revealElements = document.querySelectorAll(".reveal");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = "running";
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  revealElements.forEach((element) => {
-    element.style.animationPlayState = "paused";
-    observer.observe(element);
-  });
-}
-
 initializePage(portfolioData);
-setupRevealAnimation();
 
 const yearElement = document.getElementById("year");
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
+if (yearElement) yearElement.textContent = new Date().getFullYear();

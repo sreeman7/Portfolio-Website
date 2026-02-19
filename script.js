@@ -1,13 +1,13 @@
 const portfolioData = {
   name: "Sreeman Reddy Gokula",
   heroTitle: "Hello, I am Sreeman!",
-  role: "Student | Data Scienctist | Machine Learning/AI | SWE",
+  role: "Aspiring Software Engineer | GenAI & Full-Stack Developer",
   initials: "SR",
   githubUsername: "sreeman7",
   profileImage: "assets/profile.JPG",
   about: [
-    "I am a software developer focused on building reliable products with clean architecture and thoughtful UX.",
-    "I enjoy shipping practical features, collaborating with teams, and improving systems through measurable results."
+    "I’m a Computer Science student and aspiring Software Engineer with a strong interest in Generative AI and full-stack development. I enjoy building practical, user-focused applications and turning ideas into reliable products. I like working across the stack, from clean front-end interfaces to backend APIs and data-driven features. I’m currently focused on improving my skills in modern web development, problem solving, and AI-powered application building.",
+    "Outside of tech, I enjoy marathon running, traveling, and hiking, which help me stay disciplined, curious, and motivated."
   ],
   facts: [
     "Based in Edmonton, AB",

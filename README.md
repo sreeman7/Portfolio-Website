@@ -10,7 +10,7 @@ A responsive personal portfolio site built with plain HTML, CSS, and JavaScript.
    - `metrics`
    - `projects`
    - `skills`
-   - `contacts` (`email`, `github`, `linkedin`, `resume`)
+   - `contacts` (`email`, `github`, `linkedin`, `resume`, `youtube`)
 3. Open `index.html` in your browser
 
 ## Files
@@ -18,9 +18,10 @@ A responsive personal portfolio site built with plain HTML, CSS, and JavaScript.
 - `index.html`: layout and page structure
 - `styles.css`: styling, layout, animations, responsive behavior
 - `script.js`: all editable content and rendering logic
+- `assets`: profile JPG and resume pdf
 
 ## Deploy options
 
 - GitHub Pages
 - Netlify
-- Vercel
+- Vercel (my choose)

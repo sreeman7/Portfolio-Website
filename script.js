@@ -7,7 +7,12 @@ const portfolioData = {
   profileImage: "assets/profile.JPG",
   about: [
     "I’m a Computer Science student and aspiring Software Engineer with a strong interest in Generative AI and full-stack development. I enjoy building practical, user-focused applications and turning ideas into reliable products. I like working across the stack, from clean front-end interfaces to backend APIs and data-driven features. I’m currently focused on improving my skills in modern web development, problem solving, and AI-powered application building.",
-    "Outside of tech, I enjoy marathon running, traveling, and hiking, which help me stay disciplined, curious, and motivated."
+    "Outside of tech, I enjoy marathon running, traveling, and hiking, which help me stay disciplined, curious, and motivated.",
+    "",
+    "Why Work With Me?",
+    "I bring a never-give-up mindset and stay consistent through difficult problems until they are solved.",
+    "I think independently, challenge default thinking, and look for smarter ways to build real-world solutions.",
+    "I combine full-stack development with GenAI curiosity to deliver practical, product-focused results."
   ],
   facts: [
     "Based in Edmonton, AB",
@@ -100,7 +105,8 @@ const portfolioData = {
     email: "gokula@ualberta.ca",
     github: "https://github.com/sreeman7",
     linkedin: "https://www.linkedin.com/in/sreeman-reddy-gokula-3674b02b5/",
-    resume: "https://example.com/your-resume.pdf"
+    resume: "assets/resume.pdf",
+    youtube: "https://www.youtube.com/@SreemanReddyGokula"
   }
 };
 

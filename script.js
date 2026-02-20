@@ -83,16 +83,17 @@ const portfolioData = {
     }
   ],
   skills: [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "Express",
     "Python",
-    "PostgreSQL",
+    "C99",
+    "SQL",
+    "MongoDB",
     "Git",
+    "Linux",
+    "RISC-V",
+    "AI Automation Tools",
     "Responsive Design",
-    "Testing"
+    "Testing",
+    "Microsoft Office"
   ],
   contactCopy: "If you want to contact me, use the form or one of these links.",
   contacts: {

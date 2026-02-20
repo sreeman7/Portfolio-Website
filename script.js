@@ -287,6 +287,7 @@ function initializePage(data) {
   setLink("email-link", `mailto:${data.contacts.email}`);
   setLink("github-link", data.contacts.github);
   setLink("linkedin-link", data.contacts.linkedin);
+  setLink("youtube-link", data.contacts.youtube);
   setLink("resume-link", data.contacts.resume);
 }
 

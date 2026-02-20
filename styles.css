@@ -432,6 +432,16 @@ textarea:focus {
 .contact-links a {
   color: var(--primary-dark);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-links svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex: 0 0 auto;
 }
 
 .site-footer {

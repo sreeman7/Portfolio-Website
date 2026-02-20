@@ -73,15 +73,13 @@ const portfolioData = {
       title: "Junior Mentor ",
       meta: "Faculty of Science, University of Alberta",
       description:
-        "Mentored junior science students by providing academic guidance, study and transition strategies.",
-        "Supported faculty-led mentoring activities and promoted a positive, inclusive learning environment."
+        "Mentored junior science students by providing academic guidance, study and transition strategies. Supported faculty-led mentoring activities and promoted a positive, inclusive learning environment."
     },
     {
       title: "Safewalk Patroller | Trainer",
       meta: "University of Alberta",
       description:
-        "Provided safe walking escorts during evening and night hours, ensuring campus safety.",
-        "Trained and mentored new volunteers on Safewalk procedures and emergency response."
+        "Provided safe walking escorts during evening and night hours, ensuring campus safety. Trained and mentored new volunteers on Safewalk procedures and emergency response."
     }
   ],
   skills: [

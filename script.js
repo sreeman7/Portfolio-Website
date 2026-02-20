@@ -11,8 +11,8 @@ const portfolioData = {
   ],
   facts: [
     "Based in Edmonton, AB",
-    "Open to Software Engineer opportunities",
-    "Interests: web apps, APIs, and product engineering"
+    "Open to Software Engineer Intern | Full-Stack & GenAI Developer",
+    "Interests: Full-stack web development, Generative AI and AI-powered applications, Building scalable APIs and backend systems"
   ],
   education: [
     {
@@ -20,17 +20,21 @@ const portfolioData = {
       meta: "BSc in Computing Science | 2024 - 2028",
       points: [
         "Relevant focus on software engineering, algorithms, and systems.",
-        "Built academic and personal projects in full-stack development."
+        "Built academic and personal projects in full-stack development.",
+        "Developing hands-on projects in full-stack web development and API integration.",
+        "Exploring Generative AI concepts and applying them in practical software projects."
       ]
     }
   ],
   experience: [
     {
-      role: "Software Developer Projects",
-      meta: "Portfolio Work | 2024 - Present",
+      role: "Software Developer Intern",
+      meta: "Student Consultant | May 2025 - August 2025",
       points: [
-        "Developed web applications with responsive UI and accessible interactions.",
-        "Implemented API integrations and improved performance across pages."
+        "Analyzed 8+ business workflows to identify inefficiencies and opportunities for digital process improvement.",
+        "Built 4 lightweight AI-enabled workflows for reporting and summarization, reducing recurring manual effort by ~30%.",
+        "Gathered requirements from cross-functional stakeholders and translated them into 3 implementation-ready solution plans.",
+        "Delivered executive-ready presentations to 10+ stakeholders, summarizing recommendations, trade-offs, and adoption steps."
       ]
     }
   ],
@@ -66,16 +70,18 @@ const portfolioData = {
   ],
   activities: [
     {
-      title: "Hackathon Participant",
-      meta: "University and Community Events",
+      title: "Junior Mentor ",
+      meta: "Faculty of Science, University of Alberta",
       description:
-        "Worked in fast-paced teams to design and build prototypes within 24-48 hours."
+        "Mentored junior science students by providing academic guidance, study and transition strategies.",
+        "Supported faculty-led mentoring activities and promoted a positive, inclusive learning environment."
     },
     {
-      title: "Technical Club Member",
-      meta: "Campus Developer Community",
+      title: "Safewalk Patroller | Trainer",
+      meta: "University of Alberta",
       description:
-        "Contributed to peer coding sessions, project demos, and technical knowledge sharing."
+        "Provided safe walking escorts during evening and night hours, ensuring campus safety.",
+        "Trained and mentored new volunteers on Safewalk procedures and emergency response."
     }
   ],
   skills: [

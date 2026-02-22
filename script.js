@@ -75,6 +75,12 @@ const portfolioData = {
   ],
   activities: [
     {
+      title: "Taekwondo Club Member",
+      meta: "University of Alberta, Taekwondo Club",
+      description:
+        "Actively train in taekwondo to build discipline, consistency, focus, and teamwork through regular practice and club activities."
+    },
+    {
       title: "Junior Mentor ",
       meta: "Faculty of Science, University of Alberta",
       description:
